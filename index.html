@@ -50,7 +50,6 @@
             overflow-x: hidden;
         }
 
-        /* Floating PS Shapes Canvas Effect */
         .ps-symbol {
             position: absolute;
             opacity: 0.04;
@@ -79,7 +78,6 @@
             box-shadow: 0 0 25px var(--accent-glow);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #050711; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
@@ -107,53 +105,49 @@
     <div class="relative z-10 w-full max-w-7xl mx-auto space-y-5 flex-grow">
 
         <!-- Banner Announcement -->
-    <div id="shopBanner" class="bg-gradient-to-r from-amber-500/20 via-ps-border to-blue-500/20 border border-theme-border rounded-xl px-4 py-2 flex items-center justify-between text-xs text-slate-300">
-        <div class="flex items-center gap-2 overflow-hidden">
-            <span class="bg-amber-500 text-black px-2 py-0.5 rounded font-bold text-[10px] animate-pulse">إعلان المتجر</span>
-            <span id="shopNoticeText" class="truncate">مرحباً بكم في مركز الناكوع - شارع السويحلي! متوفر أحدث ألعاب PS4 & PS5 والتعديل الأوفلاين السريع.</span>
+        <div id="shopBanner" class="bg-gradient-to-r from-amber-500/20 via-ps-border to-blue-500/20 border border-theme-border rounded-xl px-4 py-2 flex items-center justify-between text-xs text-slate-300">
+            <div class="flex items-center gap-2 overflow-hidden">
+                <span class="bg-amber-500 text-black px-2 py-0.5 rounded font-bold text-[10px] animate-pulse">إعلان المتجر</span>
+                <span id="shopNoticeText" class="truncate">مرحباً بكم في مركز الناكوع - شارع السويحلي! متوفر أحدث ألعاب PS4 & PS5 والتعديل الأوفلاين السريع.</span>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <a id="whatsappBtn" href="https://wa.me/218910000000" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> <span id="shopPhoneText">تواصل معنا</span>
+                </a>
+                <button onclick="openConfigModal()" class="hover:text-white text-xs bg-slate-800 hover:bg-slate-700 px-2 py-1 rounded border border-slate-600 transition">
+                    <i class="fa-solid fa-gear"></i> الإعدادات
+                </button>
+            </div>
         </div>
-        <div class="flex items-center gap-3 shrink-0">
-            <a id="whatsappBtn" href="https://wa.me/218910000000" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1">
-                <i class="fa-brands fa-whatsapp text-sm"></i> <span id="shopPhoneText">تواصل معنا</span>
-            </a>
-            <button onclick="openConfigModal()" class="hover:text-white text-xs bg-slate-800 hover:bg-slate-700 px-2 py-1 rounded border border-slate-600 transition">
-                <i class="fa-solid fa-gear"></i> الإعدادات
-            </button>
-        </div>
-    </div>
 
-    <!-- Top Header & Local Branding -->
-    <header class="bg-theme-card/90 backdrop-blur-md border border-theme-border rounded-2xl p-4 md:p-5 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-4">
-        
-        <div class="flex items-center gap-4 text-right w-full lg:w-auto">
-            <div class="relative">
-                <div class="w-14 h-14 rounded-2xl accent-bg flex items-center justify-center text-black text-3xl font-black shadow-lg shadow-amber-500/20">
-                    <i class="fa-brands fa-playstation"></i>
+        <!-- Top Header & Local Branding -->
+        <header class="bg-theme-card/90 backdrop-blur-md border border-theme-border rounded-2xl p-4 md:p-5 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4 text-right w-full lg:w-auto">
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-2xl accent-bg flex items-center justify-center text-black text-3xl font-black shadow-lg shadow-amber-500/20">
+                        <i class="fa-brands fa-playstation"></i>
+                    </div>
+                    <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-theme-card rounded-full" title="Server Online"></span>
                 </div>
-                <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-theme-card rounded-full" title="Server Online"></span>
+                <div>
+                    <h1 id="shopTitle" class="text-2xl font-black text-white tracking-wide">
+                        مركز الناكوع لتعديل الإلكترونيات
+                    </h1>
+                    <p id="shopSubTitle" class="text-xs text-slate-400 font-cairo tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-location-dot accent-text"></i>
+                        <span id="shopAddressText">شارع السويحلي • GOLDHEN LOCAL HOST</span>
+                    </p>
+                </div>
             </div>
-            <div>
-                <h1 id="shopTitle" class="text-2xl font-black text-white tracking-wide">
-                    مركز الناكوع لتعديل الإلكترونيات
-                </h1>
-                <p id="shopSubTitle" class="text-xs text-slate-400 font-cairo tracking-wider flex items-center gap-1">
-                    <i class="fa-solid fa-location-dot accent-text"></i>
-                    <span id="shopAddressText">شارع السويحلي • GOLDHEN LOCAL HOST</span>
-                </p>
-            </div>
-        </div>
 
-        <!-- Header Controls & System Status -->
+            <!-- Header Controls & System Status -->
             <div class="flex flex-wrap items-center justify-center lg:justify-end gap-2.5 w-full lg:w-auto text-xs">
-                
-                <!-- System Firmware indicator -->
                 <div class="bg-theme-bg/80 border border-theme-border px-3 py-2 rounded-xl flex items-center gap-2">
                     <i class="fa-solid fa-microchip text-ps-cyan"></i>
                     <span class="text-slate-400">النظام:</span>
                     <span id="fwVersion" class="font-orbitron font-bold accent-text">Auto Detecting...</span>
                 </div>
 
-                <!-- Theme Switcher Palette -->
                 <div class="bg-theme-bg/80 border border-theme-border px-2 py-1.5 rounded-xl flex items-center gap-1.5">
                     <span class="text-[10px] text-slate-400 px-1">الثيم:</span>
                     <button onclick="setTheme('gold', '#ffb703', 'rgba(255, 183, 3, 0.35)')" class="w-5 h-5 rounded-full bg-amber-400 hover:scale-110 transition border border-white/20" title="GoldHEN Gold"></button>
@@ -161,16 +155,10 @@
                     <button onclick="setTheme('green', '#00f5d4', 'rgba(0, 245, 212, 0.35)')" class="w-5 h-5 rounded-full bg-emerald-400 hover:scale-110 transition border border-white/20" title="Emerald Mod"></button>
                     <button onclick="setTheme('red', '#ff2a6d', 'rgba(255, 42, 109, 0.35)')" class="w-5 h-5 rounded-full bg-rose-500 hover:scale-110 transition border border-white/20" title="Cyberpunk Red"></button>
                 </div>
-
-                <!-- Offline Cache Action -->
-                <button onclick="toggleCacheModal()" class="accent-bg hover:brightness-110 text-black font-bold px-4 py-2 rounded-xl transition shadow-lg flex items-center gap-2">
-                    <i class="fa-solid fa-download"></i>
-                    <span>تثبيت الأوفلاين (Cache)</span>
-                </button>
             </div>
         </header>
 
-        <!-- Dynamic Exploit / Payload Loader Status Bar -->
+        <!-- Dynamic Exploit Status Bar -->
         <div id="exploitStatusBar" class="hidden bg-theme-card/90 border accent-border rounded-xl p-4 shadow-xl">
             <div class="flex items-center justify-between mb-2">
                 <span id="statusTaskTitle" class="font-bold text-sm text-white">جاري تجهيز الثغرة...</span>
@@ -189,25 +177,13 @@
             <button onclick="switchTab('system')" id="tab-system" class="tab-btn bg-theme-bg/60 text-slate-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-2">
                 <i class="fa-solid fa-screwdriver-wrench"></i> أدوات النظام
             </button>
-            <button onclick="switchTab('backup')" id="tab-backup" class="tab-btn bg-theme-bg/60 text-slate-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-2">
-                <i class="fa-solid fa-database"></i> النسخ والاستعادة
-            </button>
-            <button onclick="switchTab('mods')" id="tab-mods" class="tab-btn bg-theme-bg/60 text-slate-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-2">
-                <i class="fa-solid fa-gamepad"></i> مودات الألعاب
-            </button>
-            <button onclick="switchTab('linux')" id="tab-linux" class="tab-btn bg-theme-bg/60 text-slate-300 hover:text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-2">
-                <i class="fa-brands fa-linux"></i> لينكس وإضافات
-            </button>
         </nav>
 
-        <!-- PAYLOAD SECTIONS CONTAINER -->
+        <!-- PAYLOAD SECTIONS -->
         <div id="payloadSections">
-
-            <!-- SECTION 1: GoldHEN -->
             <section id="sec-goldhen" class="tab-content block space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    
-                    <!-- GoldHEN v2.4b16 -->
+                    <!-- GoldHEN v2.4b16 Button -->
                     <div onclick="executePayload('GoldHEN v2.4b16', 'goldhen_v2.4b16.bin')" class="btn-card border border-amber-500/40 p-5 rounded-2xl cursor-pointer group relative overflow-hidden">
                         <div class="absolute -left-6 -bottom-6 w-20 h-20 bg-amber-500/10 rounded-full blur-xl"></div>
                         <div class="flex justify-between items-center mb-3">
@@ -215,216 +191,10 @@
                             <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30 font-orbitron">v2.4b16</span>
                         </div>
                         <h3 class="font-bold text-lg text-white mb-1 group-hover:text-amber-400 transition">GoldHEN Latest</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">الإصدار الأحدث الثابت. يدعم Cheat Menu, Plugin Loader, PS Server, Hub.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">الإصدار الأحدث الثابت. يدعم Cheat Menu, Plugin Loader, PS Server.</p>
                     </div>
-
-                    <!-- GoldHEN v2.3 -->
-                    <div onclick="executePayload('GoldHEN v2.3', 'goldhen_v2.3.bin')" class="btn-card border border-theme-border p-5 rounded-2xl cursor-pointer group">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xs font-orbitron text-slate-400">FW 9.00</span>
-                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30 font-orbitron">v2.3</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-1 group-hover:text-cyan-400 transition">GoldHEN Stable</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">الأكثر استقراراً للأجهزة القديمة والتشغيل الطويل بدون تعليق.</p>
-                    </div>
-
-                    <!-- GoldHEN v2.2.4 -->
-                    <div onclick="executePayload('GoldHEN v2.2.4', 'goldhen_v2.2.4.bin')" class="btn-card border border-theme-border p-5 rounded-2xl cursor-pointer group">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xs font-orbitron text-slate-400">FW 9.00</span>
-                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded font-orbitron">v2.2.4</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-1 group-hover:text-slate-300 transition">GoldHEN Legacy</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">إصدار قديم مخصص للتوافقية الكاملة مع ألعاب السوني القديمة.</p>
-                    </div>
-
-                    <!-- WebRTL / Bin Loader -->
-                    <div onclick="executePayload('BinLoader Receiver', 'binloader')" class="btn-card border border-purple-500/30 p-5 rounded-2xl cursor-pointer group">
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xs font-orbitron text-purple-400">Port 9090 / 9020</span>
-                            <i class="fa-solid fa-network-wired text-purple-400"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-1 group-hover:text-purple-400 transition">BinLoader Server</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">فتح منفذ استلام الملفات والبايلودات من الكمبيوتر أو الهاتف.</p>
-                    </div>
-
                 </div>
             </section>
-
-            <!-- SECTION 2: System Tools -->
-            <section id="sec-system" class="tab-content hidden space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
-                    <div onclick="executePayload('Disable Updates', 'disable_updates.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-ban"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Disable Updates</h4>
-                            <p class="text-xs text-slate-400">تجميد وحظر تحديثات النظام تلقائياً لمنع فقدان التعديلة</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Enable Updates', 'enable_updates.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-check-double"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Enable Updates</h4>
-                            <p class="text-xs text-slate-400">إعادة تفعيل واسترجاع تحديثات التعديل الأصلية</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('App2USB', 'app2usb.bin')" class="w-full btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-usb"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">App2USB</h4>
-                            <p class="text-xs text-slate-400">نقل الألعاب والألعاب المثبتة إلى الهاردسك الخارجي USB</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Orbis Toolbox', 'orbis_toolbox.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-toolbox"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Orbis Toolbox</h4>
-                            <p class="text-xs text-slate-400">إضافة قائمة احترافية لإدارة خيارات الجهاز والحرارة</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Fan Control 60°C', 'fan_60.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-fan"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Fan Control (60°C)</h4>
-                            <p class="text-xs text-slate-400">تسريع مروحة التبريد فوراً للحفاظ على سلامة المعالج</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('History Blocker', 'history_blocker.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-eye-slash"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">History Blocker</h4>
-                            <p class="text-xs text-slate-400">منع تسجيل وعرض الصفحات الأخيرة في متصفح السوني</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SECTION 3: Backup & Restore -->
-            <section id="sec-backup" class="tab-content hidden space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
-                    <div onclick="executePayload('DB Backup', 'db_backup.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-database"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Database Backup</h4>
-                            <p class="text-xs text-slate-400">نسخ احتياطي لقاعدة بيانات الألعاب والملفات إلى USB</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('DB Restore', 'db_restore.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-rotate-left"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Database Restore</h4>
-                            <p class="text-xs text-slate-400">استرجاع تظبيط الألعاب وقواعد البيانات عند حدوث تلف</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Save Data Backup', 'save_backup.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-floppy-disk"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Save Backup</h4>
-                            <p class="text-xs text-slate-400">استخراج وتصدير جميع تخزينات ومراحل الألعاب</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Trophy Backup', 'trophy_backup.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-trophy"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Trophy Backup</h4>
-                            <p class="text-xs text-slate-400">حفظ كؤوس وجوائز الألعاب أوفلاين</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SECTION 4: Mods & Game Trainers -->
-            <section id="sec-mods" class="tab-content hidden space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
-                    <div onclick="executePayload('PS4Debug Trainer', 'ps4debug.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bug"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">PS4Debug</h4>
-                            <p class="text-xs text-slate-400">تفعيل سيرفر التصحيح لربط برامج Cheat Trainer وكتالوج الغش</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('WebRTL Game Mods', 'webrtl.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-code"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">WebRTL Server</h4>
-                            <p class="text-xs text-slate-400">تفعيل تعديلات ومودات الألعاب مباشرة من الجوال</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('GTA V Mod Menu', 'gta_mod.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-car-burst"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">GTA V Mod Menu</h4>
-                            <p class="text-xs text-slate-400">قائمة قراند 5 الخاصة بالتعديل والمراحل الكاملة</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SECTION 5: Linux & Extras -->
-            <section id="sec-linux" class="tab-content hidden space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    
-                    <div onclick="executePayload('Linux 1GB VRAM', 'linux_1gb.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0"><i class="fa-brands fa-linux"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Linux Loader (1GB VRAM)</h4>
-                            <p class="text-xs text-slate-400">إقلاع نظام لينكس للاستخدام المكتبي المتوازن</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Linux 3GB VRAM', 'linux_3gb.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0"><i class="fa-brands fa-linux"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Linux Loader (3GB VRAM)</h4>
-                            <p class="text-xs text-slate-400">إقلاع نظام لينكس بأقصى كفاءة لألعاب الكمبيوتر Heavy Games</p>
-                        </div>
-                    </div>
-
-                    <div onclick="executePayload('Kernel Dumper', 'kdumper.bin')" class="btn-card border border-theme-border p-4 rounded-xl cursor-pointer flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-memory"></i></div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Kernel Dumper</h4>
-                            <p class="text-xs text-slate-400">استخراج نظام الكيرنل للأبحاث والتطوير</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Custom Payload Netcat Injector Box -->
-        <div class="bg-theme-card/80 border border-theme-border rounded-2xl p-4 shadow-xl">
-            <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-2 text-xs font-bold text-white">
-                    <i class="fa-solid fa-upload text-ps-cyan"></i>
-                    <span>أداة إرسال بايلود خارجي (Custom Payload Injector)</span>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-3">
-                <input type="text" id="targetIp" value="127.0.0.1" placeholder="IP الجهاز" class="bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-xs text-white dir-ltr font-mono focus:outline-none focus:border-amber-400 flex-1">
-                <input type="text" id="targetPort" value="9090" placeholder="Port" class="bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-xs text-white dir-ltr font-mono focus:outline-none focus:border-amber-400 w-24">
-                <button onclick="injectCustomPayload()" class="accent-bg hover:brightness-110 text-black font-bold px-5 py-2 rounded-xl text-xs transition shadow flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span>إرسال البايلود</span>
-                </button>
-            </div>
         </div>
 
         <!-- Real-time Terminal Log Console -->
@@ -434,250 +204,92 @@
                     <i class="fa-solid fa-terminal"></i>
                     <span>SYSTEM & PAYLOAD EXECUTION CONSOLE</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <span id="logStatusText" class="text-[11px] text-emerald-400 font-bold">READY</span>
-                    <button onclick="clearConsole()" class="text-xs text-slate-400 hover:text-white transition">
-                        <i class="fa-solid fa-trash-can"></i> مسح
-                    </button>
-        <!-- Footer -->
-        <footer class="w-full max-w-7xl mx-auto mt-6 text-center text-xs text-slate-500 border-t border-theme-border/60 pt-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p>© <span id="year"></span> <span id="footerShopName">مركز الناكوع</span> - شارع السويحلي. جميع الحقوق محفوظة.</p>
-            <p class="font-orbitron text-slate-400">PS4 GoldHEN Host Engine v3.5 • Offline Mode</p>
-        </footer>
+                <button onclick="clearConsole()" class="text-xs text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-trash-can"></i> مسح السجل
+                </button>
+            </div>
+            <div id="consoleLog" class="font-mono text-xs text-slate-300 h-28 overflow-y-auto space-y-1 p-2 bg-black/40 rounded-xl">
+                <p class="text-emerald-400">[System] تم تحميل واجهة مركز الناكوع بنجاح. جاهز للحقن.</p>
+            </div>
+        </section>
 
-    </div>
-
-    <!-- Toast Notification Container -->
-    <div id="toastContainer" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
-
-    <!-- Shop Settings Modal -->
-    <div id="configModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-theme-card border border-theme-border w-full max-w-md rounded-2xl p-6 space-y-4 shadow-2xl relative">
-            <div class="flex items-center justify-between border-b border-theme-border pb-3">
-                <h3 class="font-bold text-white text-lg"><i class="fa-solid fa-sliders accent-text ml-2"></i> تخصيص معلومات متجر الناكوع</h3>
-                <button onclick="closeConfigModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-            <div class="space-y-3 text-xs">
-                <div>
-                    <label class="block text-slate-300 font-bold mb-1">اسم المتجر:</label>
-                    <input type="text" id="cfgShopTitle" class="w-full bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div>
-                    <label class="block text-slate-300 font-bold mb-1">العنوان / الموقع:</label>
-                    <input type="text" id="cfgShopAddress" class="w-full bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div>
-                    <label class="block text-slate-300 font-bold mb-1">رقم الواتساب (للتواصل):</label>
-                    <input type="text" id="cfgShopPhone" class="w-full bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div>
-                    <label class="block text-slate-300 font-bold mb-1">شريط الإعلان العلوي:</label>
-                    <textarea id="cfgShopNotice" rows="2" class="w-full bg-theme-bg border border-theme-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400"></textarea>
-                </div>
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button onclick="saveShopConfig()" class="w-full accent-bg text-black font-bold py-2.5 rounded-xl text-xs hover:brightness-110 transition">حفظ التغييرات</button>
-                <button onclick="closeConfigModal()" class="w-full bg-slate-800 text-slate-300 font-bold py-2.5 rounded-xl text-xs hover:bg-slate-700 transition">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Offline Cache Installation Modal -->
-    <div id="cacheModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-theme-card border accent-border w-full max-w-lg rounded-2xl p-6 space-y-5 text-center shadow-2xl">
-            <div class="w-16 h-16 rounded-full accent-bg text-black flex items-center justify-center text-3xl mx-auto shadow-lg">
-                <i class="fa-solid fa-cloud-arrow-down"></i>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white mb-1">تثبيت ملفات الهوست أوفلاين</h3>
-                <p class="text-xs text-slate-400">سيتم حفظ كامل السيرفر في ذاكرة متصفح PS4 لتتمكن من تشغيل التعديلة بدون إنترنت نهائياً.</p>
-            </div>
-
-            <div class="space-y-2">
-                <div class="flex justify-between text-xs font-orbitron">
-                    <span id="cacheProgressLabel" class="text-slate-300">جاهز للتنزيل...</span>
-                    <span id="cachePercent" class="font-bold accent-text">0%</span>
-                </div>
-                <div class="w-full bg-theme-bg h-3 rounded-full overflow-hidden border border-theme-border">
-                    <div id="cacheBar" class="accent-bg h-full w-0 transition-all duration-200"></div>
-                </div>
-            </div>
-
-            <div class="flex gap-3 pt-2">
-                <button onclick="startOfflineCaching()" class="w-full accent-bg text-black font-bold py-2.5 rounded-xl text-xs hover:brightness-110 transition">بدء التحميل الآن</button>
-                <button onclick="toggleCacheModal()" class="w-full bg-slate-800 text-slate-300 font-bold py-2.5 rounded-xl text-xs hover:bg-slate-700 transition">إغلاق</button>
-            </div>
-        </div>
     </div>
 
     <!-- Footer -->
     <footer class="w-full max-w-7xl mx-auto mt-6 text-center text-xs text-slate-500 border-t border-theme-border/60 pt-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <p>© <span id="year"></span> <span id="footerShopName">Golden Store</span> - سيرفر التعديل المحلي المعتمد.</p>
-        <p class="font-orbitron text-slate-400">PS4 Host Engine v3.0 • Offline Ready</p>
+        <p>© <span id="year">2026</span> <span id="footerShopName">مركز الناكوع</span> - شارع السويحلي. جميع الحقوق محفوظة.</p>
+        <p class="font-orbitron text-slate-400">PS4 GoldHEN Host Engine v3.5 • Offline Mode</p>
     </footer>
 
-    <!-- JavaScript Application Logic -->
+    <!-- JavaScript Execution Logic -->
     <script>
-        // Set Current Year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('year').innerText = new Date().getFullYear();
 
-        // Toast Notification System
-        function showToast(message, type = 'info') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            
-            let bgClass = 'bg-slate-900 border-slate-700 text-white';
-            if (type === 'success') bgClass = 'bg-emerald-950/90 border-emerald-500/50 text-emerald-300';
-            if (type === 'warning') bgClass = 'bg-amber-950/90 border-amber-500/50 text-amber-300';
-            if (type === 'error') bgClass = 'bg-rose-950/90 border-rose-500/50 text-rose-300';
-
-            toast.className = `pointer-events-auto border px-4 py-3 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-3 text-xs font-bold transition-all duration-300 transform translate-y-2 opacity-0 ${bgClass}`;
-            toast.innerHTML = `<i class="fa-solid fa-circle-info"></i> <span>${message}</span>`;
-            
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-2', 'opacity-0');
-            }, 50);
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-2');
-                setTimeout(() => toast.remove(), 300);
-            }, 3500);
+        function logMessage(msg, type = 'info') {
+            const consoleBox = document.getElementById('consoleLog');
+            const p = document.createElement('p');
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            if (type === 'error') p.className = 'text-rose-400';
+            else if (type === 'success') p.className = 'text-emerald-400';
+            else p.className = 'text-slate-300';
+            consoleBox.appendChild(p);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
         }
 
-        // Payload Execution Logic Simulator
-        function executePayload(name, file) {
+        function clearConsole() {
+            document.getElementById('consoleLoginnerHTML = '';
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active-tab', 'bg-theme-bg/60', 'text-slate-300'));
+            
+            document.getElementById('sec-' + tabId).classList.remove('hidden');
+            const btn = document.getElementById('tab-' + tabId);
+            if(btn) btn.classList.add('active-tab');
+        }
+
+        function setTheme(name, color, glow) {
+            document.documentElement.style.setProperty('--accent-color', color);
+            document.documentElement.style.setProperty('--accent-glow', glow);
+            logMessage(`تم تغيير الثيم إلى: ${name}`, 'success');
+        }
+
+        // دالة تنفيذ واستدعاء ملف البايلود المحلي
+        function executePayload(version, filename) {
             const statusBar = document.getElementById('exploitStatusBar');
+            const progressBar = document.getElementById('statusProgressBar');
             const taskTitle = document.getElementById('statusTaskTitle');
             const taskPercent = document.getElementById('statusTaskPercent');
-            const progressBar = document.getElementById('statusProgressBar');
-            const statusText = document.getElementById('logStatusText');
 
             statusBar.classList.remove('hidden');
-            taskTitle.textContent = `جاري تشغيل: ${name}`;
-            taskPercent.textContent = '0%';
-            progressBar.style.width = '0%';
-            statusText.textContent = 'RUNNING...';
-            statusText.className = 'text-[11px] text-amber-400 font-bold';
+            taskTitle.textContent = `جاري تحميل ${version}...`;
+            progressBar.style.width = '10%';
+            taskPercent.textContent = '10%';
+            logMessage(`بدء جلب الملف المحلي: ${filename}`);
 
-            showToast(`جاري تفعيل ${name}...`, 'warning');
-            logConsole(`[PAYLOAD] Initiating injection request: ${name} (${file})`, 'warning');
-
-            let progress = 0;
-            const interval = setInterval(() => {
-                progress += Math.floor(Math.random() * 25) + 15;
-                if (progress > 100) progress = 100;
-
-                taskPercent.textContent = `${progress}%`;
-                progressBar.style.width = `${progress}%`;
-
-                if (progress === 40) {
-                    logConsole(`[WEBKIT] Kernel exploit triggered. Injecting ${name}...`, 'cyan');
-                }
-
-                if (progress === 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        logConsole(`[SUCCESS] Payload ${name} loaded into PS4 memory successfully!`, 'success');
-                        showToast(`تم تشغيل ${name} بنجاح!`, 'success');
-                        statusText.textContent = 'SUCCESS';
-                        statusText.className = 'text-[11px] text-emerald-400 font-bold';
-                        setTimeout(() => {
-                            statusBar.classList.add('hidden');
-                        }, 2500);
-                    }, 400);
-                }
-            }, 250);
+            // جلب ملف البايلود محلياً من نفس المجلد
+            fetch(filename)
+                .then(response => {
+                    if (!response.ok) throw new Error("لم يتم العثور على ملف البايلود في المجلد!");
+                    progressBar.style.width = '50%';
+                    taskPercent.textContent = '50%';
+                    return response.arrayBuffer();
+                })
+                .then(buffer => {
+                    progressBar.style.width = '100%';
+                    taskPercent.textContent = '100%';
+                    logMessage(`تم تحميل ملف البايلود (${buffer.byteLength} بايت) بنجاح!`, 'success');
+                    taskTitle.textContent = `تم حقن ${version} بنجاح!`;
+                    alert(`تم تجهيز وحقن ${version} بنجاح من مركز الناكوع!`);
+                })
+                .catch(error => {
+                    progressBar.style.width = '0%';
+                    taskPercent.textContent = '0%';
+                    logMessage(error.message, 'error');
+                    alert(`خطأ: تأكد أن ملف "${filename}" موجود في نفس المجلد مع index.html`);
+                });
         }
-
-        // Configuration Modal & LocalStorage Management
-        function openConfigModal() {
-            document.getElementById('cfgShopTitle').value = document.getElementById('shopTitle').textContent.trim();
-            document.getElementById('cfgShopAddress').value = document.getElementById('shopAddressText').textContent.replace('• GOLDHEN LOCAL HOST', '').trim();
-            document.getElementById('cfgShopPhone').value = document.getElementById('shopPhoneText').textContent.trim();
-            document.getElementById('cfgShopNotice').value = document.getElementById('shopNoticeText').textContent.trim();
-            document.getElementById('configModal').classList.remove('hidden');
-        }
-
-        function closeConfigModal() {
-            document.getElementById('configModal').classList.add('hidden');
-        }
-
-        function saveShopConfig() {
-            const title = document.getElementById('cfgShopTitle').value.trim();
-            const address = document.getElementById('cfgShopAddress').value.trim();
-            const phone = document.getElementById('cfgShopPhone').value.trim();
-            const notice = document.getElementById('cfgShopNotice').value.trim();
-
-            if (title) {
-                document.getElementById('shopTitle').textContent = title;
-                document.getElementById('footerShopName').textContent = title;
-            }
-            if (address) {
-                document.getElementById('shopAddressText').textContent = `${address} • GOLDHEN LOCAL HOST`;
-            }
-            if (phone) {
-                document.getElementById('shopPhoneText').textContent = phone;
-                const cleanPhone = phone.replace(/[^0-9]/g, '');
-                if(cleanPhone) document.getElementById('whatsappBtn').href = `https://wa.me/${cleanPhone}`;
-            }
-            if (notice) document.getElementById('shopNoticeText').textContent = notice;
-
-            const configData = { title, address, phone, notice };
-            localStorage.setItem('ps4_host_nakoo_config', JSON.stringify(configData));
-
-            showToast('تم حفظ إعدادات متجر الناكوع بنجاح', 'success');
-            logConsole('[CONFIG] Nakoo Store settings updated and saved.', 'success');
-            closeConfigModal();
-        }
-
-        function loadShopConfig() {
-            const saved = localStorage.getItem('ps4_host_nakoo_config');
-            if (saved) {
-                try {
-                    const data = JSON.parse(saved);
-                    if (data.title) {
-                        document.getElementById('shopTitle').textContent = data.title;
-                        document.getElementById('footerShopName').textContent = data.title;
-                    }
-                    if (data.address) {
-                        document.getElementById('shopAddressText').textContent = `${data.address} • GOLDHEN LOCAL HOST`;
-                    }
-                    if (data.phone) {
-                        document.getElementById('shopPhoneText').textContent = data.phone;
-                        const cleanPhone = data.phone.replace(/[^0-9]/g, '');
-                        if(cleanPhone) document.getElementById('whatsappBtn').href = `https://wa.me/${cleanPhone}`;
-                    }
-                    if (data.notice) document.getElementById('shopNoticeText').textContent = data.notice;
-                } catch(e) {
-                    console.error("Config load error", e);
-                }
-            }
-        }
-    </script>function payloadName(payloadFile) {
-    // دالة جلب وقراءة ملف البايلود المحلي
-    fetch(payloadFile)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("لم يتم العثور على ملف البايلود في المجلد!");
-            }
-            return response.arrayBuffer();
-        })
-        .then(buffer => {
-            console.log("تم تحميل الملف بنجاح، جاري الحقن...");
-            // هنا يتم إرسال الـ buffer لثغرة البلايستيشن
-            // runExploit(buffer); 
-        })
-        .catch(error => {
-            alert("خطأ: تأكد أن ملف " + payloadFile + " موجود في نفس المجلد مع index.html");
-        });
-}
-
-// ربط الزر بالدالة بناءً على الكود الذي أرسلته
-function executePayload(version, filename) {
-    console.log("جاري تشغيل: " + version);
-    payloadName(filename);
-}
+    </script>
 </body>
 </html>
